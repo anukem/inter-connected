@@ -14,9 +14,8 @@ http.createServer(function (request, response)
       console.log('Body: ' + body)
       response.writeHead(200, {'Content-Type': 'text/html'})
     })
-
-    response.end("this is done");
   }
+  response.end("this is done");
 }).listen(process.env.PORT || 3000)
 
 console.log('Server is running')
