@@ -8,11 +8,11 @@ http.createServer(function (request, response)
     var body = ''
     request.on('data', function(data) {
       body += data
+      console.log(body)
     })
     request.on('end', function() {
       console.log('Body: ' + body)
       response.writeHead(200, {'Content-Type': 'text/html'})
-      response.end('post received')
     })
 
     response.end("this is done");
