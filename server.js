@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // Route that receives a POST request to /sms
 app.post('/', function (req, res) {
   const body = req.body.Body
+  console.log(req)
   res.set('Content-Type', 'text/plain')
   res.send(`You sent: ${body} to ezeugo`)
 })
