@@ -12,7 +12,7 @@ app.post('/', function (req, res) {
   const body = req.body.Body
   console.log(req)
   res.set('Content-Type', 'text/plain')
-  res.send(`Why you saying${body}`)
+  res.send(`Why you saying ${body}`)
 })
 
 // Tell our app to listen on port 3000
