@@ -2,8 +2,19 @@ var http = require("http")
 
 http.createServer(function (request, response)
 {
-  response.writeHead(200, {"Content-Type": "text/plain"})
-  response.end("this is my response to you")
+  if (request.method == "POST")
+  {
+    console.log('POST')
+    var body = ''
+    request.on('data', function(data) {
+      body += data
+    })
+    request.on('end', function() {
+      console.log('Body: ' + body)
+      response.writeHead(200, {'Content-Type': 'text/html'})
+      response.end('post received')
+    })
+  }
 }).listen(process.env.PORT || 3000)
 
 console.log('Server is running')
